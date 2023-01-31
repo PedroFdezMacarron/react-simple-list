@@ -1,3 +1,4 @@
+import './Main.css';
 import { useState } from "react";
 // import Form from "../Form/Form";
 import Gallery from "../Gallery/Gallery";
@@ -13,38 +14,16 @@ const iniLilst=[
     {title:"gatito 2" , description:"es el segundo elemento",imgUrl:"https://cdn.onemars.net/sites/nutro_es_NkyIN_B9cV/image/20_1615982101979.jpeg"},
 ]
 export default function Main(){
-
     const [data, setData] = useState(initialValue);
     const [cardList, setList] = useState(iniLilst);
-
     const submit = (e) => {
         e.preventDefault();
         console.log('añadir');
         setList([...cardList, data]);
       };
-
-    // console.log(iniLilst);
-
     const changeValue = (e) => {
-        setData({...data, [e.target.name]: e.target.value});
-       
+        setData({...data, [e.target.name]: e.target.value});       
       };
-
-    // let [cardList,setForm] = useState(iniLilst);
-
-    // const cardList=[...iniLilst];
-
-    
-//    const changes=()=>{
-//     // setForm(cardList.push({title:"elemento3" , description:"es el tercero elemento",imgUrl:""}));
-//    }
-   
-//    const submit = (e) => {
-//     e.preventDefault();   
-//     // setForm([...cardList],[]);
-//   };
-
-
     return(
         <div>        
             <h1>Galeria Cards 1.0</h1>
@@ -54,17 +33,7 @@ export default function Main(){
                 <input type="text" name="imgUrl" placeholder={data.imgUrl} onChange={changeValue} />            
                 <button>Añadir</button>
             </form>
-            
-            {/* <form onSubmit={submit}>
-            <button>refrescar</button>            
-            </form>
-
-            <Form cardList={cardList}></Form> */}
-
             <Gallery cardList={cardList} ></Gallery>
         </div>
     )
-
-
-    // final
 };

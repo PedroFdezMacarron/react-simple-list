@@ -3,13 +3,4 @@
     flex-wrap: wrap;
     gap:20px
 }
-.card{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding: 10px;
-}
-.img-card{
-    width: 150px;
-}
+
